@@ -3,7 +3,7 @@
 
 
 # Step 1: Install Docker and prepare for migration to the Cloud
--Install Docker Engine, which is a client-server application that contains:
+- Installed Docker Engine, which is a client-server application that contains:
 ```
 A server with a long-running daemon process dockerd.
 APIs that specify interfaces that programs can use to talk to and instruct the Docker daemon.
