@@ -103,6 +103,29 @@
  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/slack1.PNG)
  
   ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/slack2.PNG)
+  
+# Step 9:  Setting The Terraform Cloud To Execute Only From 'Dev' Branch
+- Created 3 branches dev, prod and test.
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/branches.PNG)
+
+- On the version control page in the settings tab, setting the VCS branch to dev.
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/dev.PNG)
+
+- Pushed the code and the terraform plan was executed on the dev branch thus triggering a notification on my slack channel.
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/dev2.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/dev%20slack.PNG)
+
+- Destroyed the infrastructure by clicking on Destruction and Delete option in the settings tab.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/destroy1.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/destroy2.PNG)
+
+
+
+
+
 
  
 This [link](https://github.com/Ellawangari/Terraform-Cloud) contains the repo of the codes used in this project 18
