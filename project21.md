@@ -381,5 +381,33 @@ done
 
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/27.PNG)
 
+# TASK: Distribute the files to their respective servers, using scp and a for loop like we have done previously. This is a test to validate that you understand which component must go to which node.
 
+### - Worker nodes
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/28.PNG)
+
+### - Master nodes
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/29.PNG)
+  
+  
+ # Step 7 :  Prepare the etcd database for encryption at rest.
+ 
+ - Generated the encryption key and encode it using base64
+
+`ETCD_ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64)`
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/30.PNG)
+
+-  Created an encryption-config.yaml file and sent the encryption file to the Controller nodes using scp and a for loop.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/31.PNG)
+
+- SSH into each controller server and copied the specified files.
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/32.PNG)
+
+- Downloaded and installed etcd ,Extracted and installed the etcd server and the etcdctl command line utility, Configured the etcd server, Created the etcd.service systemd unit file, Started and enabled the etcd Server, Verified the etcd installation.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/33.PNG)
+
+- Ran the command `systemctl status etcd` on the nodes.
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/34.PNG)
 
