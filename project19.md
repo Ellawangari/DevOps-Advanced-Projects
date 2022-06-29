@@ -119,12 +119,14 @@
 # Step 9:  Confirmed my infrastructure and performed a terraform destroy on it.
 
 - Confirmed the tooling and wordpress sites created by the infrastructure.
-- For tooling 
+## For tooling
+ 
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/tooling1.PNG)
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/tooling2.PNG)
 
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/25.PNG)
-- For wordpress
+
+ ## For wordpress
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/wordpress1.PNG)
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/wordpress2.PNG)
 
@@ -136,6 +138,45 @@
 
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/destroy2.PNG)
 
+
+
+# Step 10:  Working With Terraform Private Module Registry
+- Forking the repo from hashicorp
+- Then under my repository's tab, clicking on tag to create tag, clicking 'Create a new release' and adding 1.0.0 to the tag version field setting the release title to  "First module release"
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/private1.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/private2.PNG)
+
+- Published the release to create a release.
+- Selected the GitHub(Custom) VCS provider that I configured and choose the name of the module repository terraform-aws-s3-webapp and clicking the Publish module button.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/private3.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/private4.PNG)
+
+- Created aconfiguration that uses the module by forking the repo learn private module which I will access the module published and Terraform will use it to create the infrastructure.
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/private5.PNG)
+- Creating the workspace and adding required environment variables.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/privateworkspace1.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/privateworkspace2.PNG)
+
+- Did a terraform plan and terraform apply on the infrastructure.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/privateworkspace3.PNG)
+
+- Tested the infrastructure created.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/privateworkspace4.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/privateworkspace5.PNG)
+
+- Destroyed the infrastructure created.
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/privateworkspace6.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/privateworkspace7.PNG)
 
 
 
