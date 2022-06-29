@@ -116,11 +116,26 @@
 
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/dev%20slack.PNG)
 
+# Step 9:  Confirmed my infrastructure and performed a terraform destroy on it.
+
+- Confirmed the tooling and wordpress sites created by the infrastructure.
+- For tooling 
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/tooling1.PNG)
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/tooling2.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/25.PNG)
+- For wordpress
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/wordpress1.PNG)
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/wordpress2.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/26.PNG)
+
 - Destroyed the infrastructure by clicking on Destruction and Delete option in the settings tab.
 
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/destroy1.PNG)
 
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/destroy2.PNG)
+
 
 
 
