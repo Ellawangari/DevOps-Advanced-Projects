@@ -76,11 +76,11 @@
 - After code refactoring and creating new files with new resources, I ran the terraform plan, terraform fmt and terraform apply commands
  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj16/12.PNG)
  
- ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj16/13.PNG)
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj16/14.PNG)
  
  - Pushed my code to github reposiory and installed tree to check the structure of the directory.
  
- ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj16/14.PNG)
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj16/13.PNG)
  
  - Confirmed to check for the newly created resources.
  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj16/15.PNG)
