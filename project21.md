@@ -409,5 +409,87 @@ done
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/33.PNG)
 
 - Ran the command `systemctl status etcd` on the nodes.
-![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/34.PNG)
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/36.PNG)
+
+
+  
+ # Step 7 :  Configuring The Components For The Control Plane On The Master/Controller Nodes
+ 
+ - Configuring the Kubernetes API Server:
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/37.PNG)
+
+- Configuring the kube-controller-manager
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/38.PNG)
+
+- Configuring the kube-scheduler
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/39.PNG)
+
+ # Step 8 : Testing that Everything is working fine
+ - To get the cluster details run:`$ kubectl cluster-info --kubeconfig admin.kubeconfig`
+ 
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/40.PNG)
+
+- To get the current namespaces:`$ kubectl get namespaces --kubeconfig admin.kubeconfig`
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/41.PNG
+
+- To reach the Kubernetes API Server publicly:`$ curl --cacert /var/lib/kubernetes/ca.pem https://$INTERNAL_IP:6443/version`
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/42.PNG)
+
+- To get the status of each component:`$ kubectl get componentstatuses --kubeconfig admin.kubeconfig`
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/43.PNG)
+
+ # Step 9 :  Bootstraping components on the worker nodes 
+ - Downloading and installing binaries of runc, cri-ctl and container runtime (Containerd)
+``` wget https://github.com/opencontainers/runc/releases/download/v1.0.0-rc93/runc.amd64 \
+  https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.21.0/crictl-v1.21.0-linux-amd64.tar.gz \
+  https://github.com/containerd/containerd/releases/download/v1.4.4/containerd-1.4.4-linux-amd64.tar.gz 
+  ```
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/44.PNG)
+
+- Downloading Container Network Interface(CNI) plugins available from container networking’s GitHub repo:
+```
+wget -q --show-progress --https-only --timestamping \
+  https://github.com/containernetworking/plugins/releases/download/v0.9.1/cni-plugins-linux-amd64-v0.9.1.tgz
+```
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/45.PNG)
+
+- Installing CNI into /opt/cni/bin/:$ sudo tar -xvf cni-plugins-linux-amd64-v0.9.1.tgz -C /opt/cni/bin/
+- Downloading binaries for kubectl, kube-proxy, and kubelet
+
+```
+wget -q --show-progress --https-only --timestamping \
+  https://storage.googleapis.com/kubernetes-release/release/v1.21.0/bin/linux/amd64/kubectl \
+  https://storage.googleapis.com/kubernetes-release/release/v1.21.0/bin/linux/amd64/kube-proxy \
+  https://storage.googleapis.com/kubernetes-release/release/v1.21.0/bin/linux/amd64/kubelet
+  ```
+- Installing the downloaded binaries:
+
+```{
+  chmod +x  kubectl kube-proxy kubelet  
+  sudo mv  kubectl kube-proxy kubelet /usr/local/bin/
+}
+```
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/46.PNG)
+
+
+ # Step 10 :  Configuring The Worker Nodes Components
+ 
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/47.PNG)
+
+- Reloading configurations and starting both services:
+```
+{
+  sudo systemctl daemon-reload
+  sudo systemctl enable containerd kubelet kube-proxy
+  sudo systemctl start containerd kubelet kube-proxy
+}
+```
+
+- Checking the readiness of the worker nodes on all master nodes:$ kubectl get nodes --kubeconfig admin.kubeconfig -o wide
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/48.PNG)
 
