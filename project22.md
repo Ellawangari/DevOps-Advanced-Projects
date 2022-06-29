@@ -83,3 +83,74 @@ $ kubectl get rs -o wide
  - Accessed the nginx service on my web browser using the loadbalancer address 
  
  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj22/16.PNG)
+
+# Step 6: Creating Deployment
+
+A Deployment is another layer above ReplicaSets and Pods, newer and more advanced level concept than ReplicaSets. It manages the deployment of ReplicaSets and allows for easy updating of a ReplicaSet as well as the ability to roll back to a previous version of deployment. It is declarative and can be used for rolling updates of micro-services, ensuring there is no downtime.
+
+- Deleting the ReplicaSet that was created before: `$ kubectl delete rs nginx-rs`
+- Creating deployment manifest file called deployment.yaml and applying it:`$ kubectl apply -f deployment.yaml`
+
+- Inspecting the setup: ` kubectl get deployments`
+
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj22/17.PNG)
+ 
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj22/18.PNG)
+
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj22/19.PNG)
+ 
+ 
+- To exec into one of the pods:`kubectl exec nginx-deployment-6fdcffd8fc-277g5 -i -t -- bash`
+  
+  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj22/20.PNG)
+  
+
+# Step 7: Persisting data for pods
+
+- Scale the Pods down to 1 replica.
+  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj22/21.PNG)
+  
+- Installed vim so that you can edit the file
+
+``
+apt-get update
+apt-get install vim
+``
+- Update the content of the file and add the code below /usr/share/nginx/html/index.html
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to DAREY.IO!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to DAREY.IO!</h1>
+<p>I love experiencing Kubernetes</p>
+
+<p>Learning by doing is absolutely the best strategy at 
+<a href="https://darey.io/">www.darey.io</a>.<br/>
+for skills acquisition
+<a href="https://darey.io/">www.darey.io</a>.</p>
+
+<p><em>Thank you for learning from DAREY.IO</em></p>
+</body>
+</html>
+```
+
+- Checked the browser.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj22/22.PNG)
+
+- Deleted the only running Pod
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj22/24.PNG)
+
+- Refresh the web page – You will see that the content you saved in the container is no longer there. That is because Pods do not store data when they are being recreated – that is why they are called ephemeral or stateless.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj22/25.PNG)
