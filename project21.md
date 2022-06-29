@@ -287,7 +287,7 @@ for i in 0 1 2; do
     --tags "Key=Name,Value=${NAME}-master-${i}"
 done
 ```
-![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/3.PNG)
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/13.PNG)
 
 - Create 3 worker nodes:
 ```
@@ -312,7 +312,40 @@ for i in 0 1 2; do
 done
 ```
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/14.PNG)
+
+
+# Step 5: Prepare The Self-Signed Certificate Authority And Generate TLS Certificates
+
+-  Created a directory called `mkdir ca-authority && cd ca-authority`
+-  Generated the CA configuration file, Root Certificate, and Private key:
   
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/15.PNG)
+
+- Listed the directory to see the created files.
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/16.PNG)
+
+- Generated the Certificate Signing Request (CSR), Private Key and the Certificate for the Kubernetes Master Nodes.
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/17.PNG)
+
+-  Generated kube-scheduler Client Certificate and Private Key.
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/18.PNG)
+ 
+- Generated kube-proxy Client Certificate and Private Key
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/19.PNG)
+
+- Generated kube-controller-manager Client Certificate and Private 
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/20.PNG)
+
+- Generated kubelet Client Certificate and Private Key
+
+- Generated kubernetes admin user's Client Certificate and Private Key
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/21.PNG)
+
+- Generated the Token Controller the finally ran the command `ls -ltr` to list the created keys and certificates.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/22.PNG)
 
 
 
