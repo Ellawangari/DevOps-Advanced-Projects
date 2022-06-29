@@ -66,8 +66,27 @@
  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/12.PNG)
  
   # Step 7 : Configuring The Infrastructure With Ansible
-  - Connected 
- 
+  - Connected to the bastion  server on my vs code to run ansible scripts for the infrastructure.
   
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/14.PNG)
+ 
+ - Updating the nginx.conf.j2 file to input the internal load balancer dns name generated via terraform:
+
+
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/15.PNG)
+
+  
+- Updated the RDS endpoints, Database name, password and username in the setup-db.yml file for both the tooling and wordpress role
+
+  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/16.PNG)
+  
+   ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/17.PNG)
+  
+- Updated the EFS Access point ID for both the wordpress and tooling role in the main.yml
+- For tooling.
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/18.PNG)
+- For Wordpress 
+
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/19.PNG)
  
 This [link](https://github.com/Ellawangari/Terraform-Cloud) contains the repo of the codes used in this project 18
