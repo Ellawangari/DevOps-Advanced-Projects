@@ -346,6 +346,40 @@ done
 - Generated the Token Controller the finally ran the command `ls -ltr` to list the created keys and certificates.
 
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/22.PNG)
+ 
+ 
+ # Step 5: Distributing the Client and Server Certificates
+ -  Copied these files securely to the worker nodes using scp utility
+```
+Root CA certificate – ca.pem
+X509 Certificate for each worker node
+Private Key of the certificate for each worker node
+```
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/25.PNG)
+
+-  Copied the following to the Master or Controller node:
+```
+for i in 0 1 2; do
+instance="${NAME}-master-${i}" \
+  external_ip=$(aws ec2 describe-instances \
+    --filters "Name=tag:Name,Values=${instance}" \
+    --output text --query 'Reservations[].Instances[].PublicIpAddress')
+  scp -i ../ssh/${NAME}.id_rsa \
+    ca.pem ca-key.pem service-account-key.pem service-account.pem \
+    master-kubernetes.pem master-kubernetes-key.pem ubuntu@${external_ip}:~/;
+done
+```
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/24.PNG)
+
+
+# Step 6 : Used `KUBECTL` to generate K8s configuration files for authentication.
+
+- Generated the kubelet kubeconfig file
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/26.PNG)
+
+- Generated the kube-proxy kubeconfig , Kube-Controller-Manager kubeconfig, Kube-Scheduler Kubeconfig, finally the kubeconfig file for the admin user.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/27.PNG)
 
 
 
