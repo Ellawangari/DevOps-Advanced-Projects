@@ -121,7 +121,7 @@
 - Confirmed the tooling and wordpress sites created by the infrastructure.
 ## For tooling
  
-![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/tooling1.PNG)
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/tooling%201.PNG)
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/tooling2.PNG)
 
 ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/25.PNG)
@@ -183,5 +183,3 @@
 
 
 
- 
-This [link](https://github.com/Ellawangari/Terraform-Cloud) contains the repo of the codes used in this project 19
