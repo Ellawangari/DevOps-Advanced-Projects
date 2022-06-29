@@ -48,5 +48,86 @@ A command-line interface (CLI) client docker.
 
  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/9.PNG)
  
+# Step 4: Running The Tooling App
+- From the tooling app directory where the Dockerfile is, running the following command to build the docker image:` $ docker build -t tooling:0.0.1 .`
+
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/10.PNG)
+
+- Running the container: `$ docker run --network tooling_app_network -p 8085:80 -it tooling:0.0.1`
+
+  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/11.PNG)
+
+- Tested the tooling app in the browser:http://localhost:8085
+
+   ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/12.PNG)
+
+# Step 5 : Migrating PHP-Todo App Into A Containerized Application
+- Cloned the php-todo app repository https://github.com/Ellawangari/php-todo and wrote a Dockerfile for the application
+
+- Created a MySQL container for the php-todo frontend
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/13.PNG)
+ 
+- Executed the build command to create the Docker image.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/13p1.PNG)
+
+- Ran` docker container ls` to check for the container
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/13p2.PNG)
+
+
+- Running the artisan migrate command inside the php-todo container.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/13p3.PNG)
+
+
+- Tested the php-todo app on the browser.
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/13p4.PNG)
+
+
+# Step 5: Pushing The Docker Image To Docker Registry
+ - Created a new repository in the Docker registry.
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/docker1.PNG)
+
+
+- Logged in from the commandline and changing the name of the php-todo image and giving it a tag.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/docker2.PNG)
+
+ - Pushed the php-todo app image to my Docker repository
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/docker3.PNG)
+ 
+ 
+# Step 6: Running Docker Build And Docker Push on Jenkins
+- Created a repository in AWS Elastic Container Registry
+
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/14.PNG)
+ 
+
+- Setting up the Jenkins server by installing Docker plugin in Jenkins to run Docker job.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/15.PNG)
+
+- Giving Jenkins permission on .aws configuration file: Moving the .aws folder to /var/lib/jenkins directory and running the following command:$ sudo chown jenkins:jenkins .aws and also running the command: `$ sudo chmod 666 /var/run/docker.run`
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/16.PNG)
+
+- Logged in to my commandline.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/17.PNG)
+
+
+- Pushed the changes to my github repo and created a multibranch pipeline job and linking it to the php-todo repository.
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/18.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/19.PNG)
+
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj20/20.PNG)
+
+
+
+
+
+
  
 
