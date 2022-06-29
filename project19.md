@@ -54,11 +54,20 @@
  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/8.PNG)
  
  
-# Step 5 : Running The Terraform Cloud To Provision Resources
+# Step 6: Running The Terraform Cloud To Provision Resources
 - Inputing the AMI ID in my terraform.tfvars file for the servers built with packer which terraform will use to provision Bastion, Nginx, Tooling and Wordpress server.
- ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/8.PNG)
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/9.PNG)
  
+ - Pushing the code to my github repo will cause a trigger plan on my terraform cloud workspace, so i accepted the plan and automatically did a terraform apply of my infrastructure.
+  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/10.PNG)
+  
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/11.PNG)
  
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/12.PNG)
  
+  # Step 7 : Configuring The Infrastructure With Ansible
+  - Connected 
+ 
+  
  
 This [link](https://github.com/Ellawangari/Terraform-Cloud) contains the repo of the codes used in this project 18
