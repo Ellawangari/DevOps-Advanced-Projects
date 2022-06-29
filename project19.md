@@ -89,4 +89,20 @@
 
  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/19.PNG)
  
+ 
+ - Verified the inventory using dynamic inventory.
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/20.PNG)
+
+- Exported the environment variable ANSIBLE_CONFIG to point to the ansible.cfg from the repo and running the ansible-playbook command: $ ansible-playbook -i inventory/aws_ec2.yml playbook/site.yml
+
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/21.PNG)
+  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/22.PNG)
+  
+# Step 8:  Setting Slack Notification For trigger Events
+- On the setting tab selected notification, selecting slack option.
+ ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/slack1.PNG)
+ 
+  ![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj19/slack2.PNG)
+
+ 
 This [link](https://github.com/Ellawangari/Terraform-Cloud) contains the repo of the codes used in this project 18
