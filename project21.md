@@ -432,7 +432,7 @@ done
 
 - To get the current namespaces:`$ kubectl get namespaces --kubeconfig admin.kubeconfig`
 
-![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/41.PNG
+![alt text](https://github.com/Ellawangari/DevOps-Advanced-Projects/blob/main/Imgs/prj21/41.PNG)
 
 - To reach the Kubernetes API Server publicly:`$ curl --cacert /var/lib/kubernetes/ca.pem https://$INTERNAL_IP:6443/version`
 
